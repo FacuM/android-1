@@ -15,10 +15,10 @@ cd $HOME/omni
 mkdir -p .repo/local_manifests
 curl https://gist.githubusercontent.com/FacuM/bd9873e76d40969a77f2414d7a44f9de/raw/7eee62e22900dca55d67e0cabee1004a44c61bdb/local_manifest.xml > .repo/local_manifests/local_manifest.xml
 repo init -u git://github.com/omnirom/android.git -b android-7.1
-repo sync -j$(nproc --all)
+repo sync -j1
 while [ $? -ne 0 ]
 do
- repo sync -j$(nproc --all) --force-sync
+ repo sync -j1 --force-sync
 done
 . build/envsetup.sh
 #make clean && make clobber
