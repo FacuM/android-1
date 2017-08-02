@@ -1,4 +1,3 @@
 language: c
-dist: precise
 install: ./install-dependencies.sh
 script: ./build.sh
